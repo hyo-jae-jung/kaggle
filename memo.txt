@@ -1,0 +1,49 @@
+[ImageFolder, DatasetFolder]
+입력으로 데이터의 상위 디렉토리 주소만 입력하면 됨
+디렉토리 형식을 각 클래스별로 디렉토리로 묶는 방식만 됨
+
+https://pytorch.org/vision/stable/datasets.html#base-classes-for-custom-datasets
+Find the class folders in a dataset structured as follows:
+
+directory/
+├── class_x
+│   ├── xxx.ext
+│   ├── xxy.ext
+│   └── ...
+│       └── xxz.ext
+└── class_y
+    ├── 123.ext
+    ├── nsdf3.ext
+    └── ...
+    └── asd932_.ext
+
+[torch.backends.cudnn.benchmark = True]
+https://stackoverflow.com/questions/58961768/set-torch-backends-cudnn-benchmark-true-or-not
+https://discuss.pytorch.org/t/what-does-torch-backends-cudnn-benchmark-do/5936
+최적의 알고리즘을 찾아서 계산을 해주는 기능인데 속도도 빨라지고 memory footprint도 효율적이라고 함
+조건은 입력 데이터의 size와 네트워크 레이어의 변화가 없어야 효율이 좋다고 함
+파이토치 포럼 보면 효과를 봤다는 경험담도 있음
+
+[cuDNN]
+https://developer.nvidia.com/cudnn
+nvidia cuda deep nural network library인데 gpu 가속기임
+
+
+[TORCH.USE_DETERMINISTIC_ALGORITHMS]
+https://tempdev.tistory.com/28
+https://jh-bk.tistory.com/19
+https://pytorch.org/docs/stable/generated/torch.use_deterministic_algorithms.html#torch.use_deterministic_algorithms
+https://pytorch.org/docs/stable/notes/randomness.html#avoiding-nondeterministic-algorithms
+
+
+[timm]
+https://github.com/rwightman/pytorch-image-models
+https://rwightman.github.io/pytorch-image-models/
+학습된 모델을 제공해주는 library
+
+
+[f1 score]
+precision과 recall의 조화평균
+precision:정확도, 정확도가 낮으면 1종오류의 확률이 높음
+recall:검출율, 검출율이 낮으면 2종오류의 확률이 높음
+
